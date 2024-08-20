@@ -9,8 +9,7 @@ name: Java CI with Gradle
 
 on:
  push:
-    tags:
-      - '3.5.0'
+    branches: [ dev ]
 
   # Allows you to run this workflow manually from the Actions tab
  workflow_dispatch:
@@ -22,7 +21,18 @@ jobs:
     permissions:
       contents: read
 
-    steps:
+    steps:    
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Fetch all history for fetching tags
+
+    - name: Fetch Tags
+      run: git fetch --tags
+
+    - name: Checkout Tag
+      run: git checkout tags/3.5.0 # 检查出 3.5 标签
+      
     - uses: actions/checkout@v4
     - name: Set up JDK 17
       uses: actions/setup-java@v4
