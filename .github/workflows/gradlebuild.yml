@@ -14,12 +14,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
  workflow_dispatch:
    inputs:
-	  version:
-	  description: '3.5.0'
-	  required: true
-	  default: 'minor'
-   type: choice
-   options:
+   version:
+    description: '3.5.0'
+    required: true
+    default: 'minor'
+    type: choice
+    options:
      - major
      - minor
      - patch
