@@ -9,7 +9,9 @@ name: Java CI with Gradle
 
 on:
  push:
-    branches: [ dev ]
+  tags:
+   - '3.5.0'
+#    branches: [ dev ]
 
   # Allows you to run this workflow manually from the Actions tab
  workflow_dispatch:
