@@ -37,12 +37,13 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0 # Fetch all history for fetching tags
+        ref: refs/tags/3.5.0
 
-    - name: Fetch Tags
-      run: git fetch --tags
+   # - name: Fetch Tags
+    #  run: git fetch --tags
 
-    - name: Checkout Tag
-      run: git checkout tags/3.5.0 # 检查出 3.5 标签
+    #- name: Checkout Tag
+    #  run: git checkout tags/3.5.0 # 检查出 3.5 标签
       
     - uses: actions/checkout@v4
     - name: Set up JDK 17
